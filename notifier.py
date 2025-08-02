@@ -42,6 +42,7 @@ def wrap_in_custom_try_except(lines: list[str]) -> list[str]:
     {{placeholder}}
     except Exception as e:\n
         run_failed_keybinding(keyboard)\n
+        raise e\n
     else:\n
         run_success_keybinding(keyboard)\n
     """
