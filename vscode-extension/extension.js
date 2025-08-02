@@ -8,7 +8,7 @@ function activate(context) {
     "jupyter-notifier.showGoodNotification",
     function () {
       vscode.window.showInformationMessage(
-        (message = "Good job!"),
+        (message = "✅ Good job!"),
         (items = { title: "✅ - Test Passed 🎉" })
       );
     }
@@ -16,8 +16,8 @@ function activate(context) {
   let showBadNotification = vscode.commands.registerCommand(
     "jupyter-notifier.showBadNotification",
     function () {
-      vscode.window.showInformationMessage(
-        (message = "Try Again!"),
+      vscode.window.showErrorMessage(
+        (message = "❌ Try Again!"),
         (items = { title: "❌ - Test Failed 😭" })
       );
     }
