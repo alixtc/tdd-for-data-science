@@ -1,0 +1,16 @@
+[project]
+name = "tdd-for-data-science"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.3.1",
+    "pelage>=0.4.2",
+    "polars>=1.32.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.0",
+]
