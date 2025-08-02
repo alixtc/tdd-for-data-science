@@ -5,7 +5,7 @@ from pynput.keyboard import Controller, Key
 keyboard = Controller()
 
 
-def run_success_keybinding(keyboard: Controller):
+def run_success_keybinding(keyboard: Controller = keyboard):
     keyboard.press(Key.cmd)
     keyboard.press(Key.shift)
     keyboard.press(Key.alt)
@@ -17,7 +17,7 @@ def run_success_keybinding(keyboard: Controller):
     keyboard.release("g")
 
 
-def run_failed_keybinding(keyboard: Controller):
+def run_failed_keybinding(keyboard: Controller = keyboard):
     keyboard.press(Key.cmd)
     keyboard.press(Key.shift)
     keyboard.press(Key.alt)
@@ -29,21 +29,28 @@ def run_failed_keybinding(keyboard: Controller):
     keyboard.release("b")
 
 
+def wrap_in_custom_try_except(lines: list[str]) -> list[str]:
 
-def wrap_in_custom_try_except(lines :list[str]) -> list[str]:
-
-    exception_handling = dedent(
-    """
+    beginning, end = dedent(
+        """
+    from notifier import (\n
+        keyboard,\n
+        run_failed_keybinding,\n
+        run_success_keybinding,\n
+    )\n
+    try:\n
+    {{placeholder}}
     except Exception as e:\n
         run_failed_keybinding(keyboard)\n
     else:\n
         run_success_keybinding(keyboard)\n
     """
-    ).split("\n")
+    ).split("{{placeholder}}")
+
     wrapped_lines = [
-        "try:\n",
+        *[s + "\n" for s in beginning.splitlines()],
         *[indent(line, "\t") for line in lines],
-        *[s + "\n" for s in exception_handling],
+        *[s + "\n" for s in end.splitlines()],
     ]
 
     return wrapped_lines
