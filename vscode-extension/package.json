@@ -1,0 +1,19 @@
+{
+    "name": "jupyter-notifier",
+    "displayName": "Jupyter Notifier",
+    "description": "Shows notifications from Jupyter notebooks.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "main": "./extension.js",
+    "activationEvents": [],
+    "contributes": {
+        "commands": [
+            {
+                "command": "jupyter-notifier.showNotification",
+                "title": "Show Notification"
+            }
+        ]
+    }
+}
