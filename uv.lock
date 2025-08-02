@@ -740,6 +740,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "ipykernel" },
+    { name = "ipython" },
     { name = "pynput" },
 ]
 
@@ -753,6 +754,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "ipykernel", specifier = ">=6.30.0" },
+    { name = "ipython", specifier = ">=9.4.0" },
     { name = "pynput", specifier = ">=1.8.1" },
 ]
 

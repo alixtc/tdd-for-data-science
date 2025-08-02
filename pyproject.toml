@@ -13,5 +13,6 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ipykernel>=6.30.0",
+    "ipython>=9.4.0",
     "pynput>=1.8.1",
 ]
