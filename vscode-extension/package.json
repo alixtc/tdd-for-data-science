@@ -11,8 +11,12 @@
     "contributes": {
         "commands": [
             {
-                "command": "jupyter-notifier.showNotification",
-                "title": "Show Notification"
+                "command": "jupyter-notifier.showGoodNotification",
+                "title": "Show Good Notification"
+            },
+            {
+                "command": "jupyter-notifier.showBadNotification",
+                "title": "Show Bad Notification"
             }
         ]
     }
