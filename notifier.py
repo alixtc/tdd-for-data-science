@@ -1,5 +1,6 @@
 from textwrap import dedent, indent
 
+from IPython.core.interactiveshell import ExecutionResult, InteractiveShell
 from pynput.keyboard import Controller, Key
 
 keyboard = Controller()
@@ -55,3 +56,20 @@ def wrap_in_custom_try_except(lines: list[str]) -> list[str]:
     ]
 
     return wrapped_lines
+
+
+class VarWatcher:
+    def __init__(self, ip: InteractiveShell):
+        self.shell = ip
+
+    def post_run_cell(self, result: ExecutionResult):
+
+        if result.error_in_exec is not None:
+            run_failed_keybinding()
+        else:
+            run_success_keybinding()
+
+
+def load_ipython_extension(ip: InteractiveShell):
+    vw = VarWatcher(ip)
+    ip.events.register("post_run_cell", vw.post_run_cell)
