@@ -14,5 +14,9 @@ dependencies = [
 dev = [
     "ipykernel>=6.30.0",
     "ipython>=9.4.0",
+    "pyarrow>=21.0.0",
     "pynput>=1.8.1",
 ]
+
+[tool.ruff.lint]
+select = ["E", "F", "UP", "B", "SIM", "I", "ERA", 'RET', 'PD']
