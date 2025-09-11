@@ -16,7 +16,7 @@ function activate(context) {
   let showBadNotification = vscode.commands.registerCommand(
     "jupyter-notifier.showBadNotification",
     function () {
-      vscode.window.showErrorMessage(
+      vscode.window.showWarningMessage(
         (message = "❌ Try Again!"),
         (items = { title: "❌ - Test Failed 😭" })
       );
