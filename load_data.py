@@ -63,7 +63,7 @@ def data_loader() -> pl.LazyFrame:
             "Mk": "brand_name",
             "Cn": "commercial_name",
             "Cr": "registered_category",
-            "M (kg)": "mass_kd",
+            "M (kg)": "mass_kg",
             "Mt": "wltp_test_mass",
             "Ewltp (g/km)": "ewltp_g_per_km",
             "Ft": "fuel_type",
