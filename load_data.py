@@ -81,4 +81,30 @@ def data_loader() -> pl.LazyFrame:
                 "Used in calculation": "used_in_calculation",
             }
         )
+        .select(
+            "vehicle_id",
+            "obfcm_data_source",
+            "reporting_period",
+            "used_in_calculation",
+            "country",
+            "manufacturer_name",
+            "model_type",
+            "model_variant",
+            "license_plate",
+            "brand_name",
+            "commercial_name",
+            "registered_category",
+            "ewltp_g_per_km",
+            "fuel_type",
+            "fuel_mode",
+            "year",
+            "fuel_consumption",
+            "electric_consumption_wh_per_km",
+            "electric_range_km",
+            "engine_capacity_cm3",
+            "engine_power_kw",
+            "mass_kg",
+            "total_fuel_consumed_l",
+            "total_distance_travelled_km",
+        )
     )

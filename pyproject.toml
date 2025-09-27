@@ -4,7 +4,13 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["pandas>=2.3.1", "pelage>=0.4.2", "polars>=1.32.0"]
+dependencies = [
+
+    "pandas>=2.3.1",
+    "pelage>=0.4.2",
+    "polars>=1.32.0",
+    "pytest-benchmark>=5.1.0",
+]
 
 [dependency-groups]
 dev = [
@@ -17,3 +23,6 @@ dev = [
 [tool.ruff.lint]
 select = ["E", "F", "UP", "B", "SIM", "I", "ERA", 'RET', 'PD']
 ignore = ["E501"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
